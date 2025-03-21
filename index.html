@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUARRY Coin - AI-Driven Cryptocurrency</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: black;
+            color: white;
+        }
+
+        .section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            position: relative;
+        }
+
+        #hero {
+            background: url('https://source.unsplash.com/1600x900/?futuristic,ai') no-repeat center center/cover;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .parallax {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        h1 {
+            font-size: 60px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+            animation: slideIn 2s ease-in-out;
+        }
+
+        p {
+            font-size: 20px;
+            max-width: 600px;
+            margin-top: 10px;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            background: #ffcc00;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 30px;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .button:hover {
+            background: #ffdd44;
+            transform: scale(1.1);
+        }
+
+        .section:nth-child(odd) {
+            background: #121212;
+        }
+
+        .section:nth-child(even) {
+            background: #1e1e1e;
+        }
+
+        .fade {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 1s ease-in-out;
+        }
+
+        .visible {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            0% { opacity: 0; transform: translateY(-30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sekcja Hero -->
+    <div class="section" id="hero">
+        <div class="parallax"></div>
+        <h1>QUARRY Coin</h1>
+        <p>The AI-powered cryptocurrency shaping the future of blockchain.</p>
+        <a href="#about" class="button">Learn More</a>
+    </div>
+
+    <!-- Sekcja "About" -->
+    <div class="section" id="about">
+        <h2>What is QUARRY?</h2>
+        <p class="fade">QUARRY Coin is the first AI-optimized cryptocurrency that ensures security, scalability, and efficiency with minimal energy consumption.</p>
+    </div>
+
+    <!-- Sekcja "AI Technology" -->
+    <div class="section">
+        <h2>AI-Powered Blockchain</h2>
+        <p class="fade">Our advanced AI automatically optimizes transactions, reduces fees, and enhances security through predictive analytics.</p>
+    </div>
+
+    <!-- Sekcja "Features" -->
+    <div class="section">
+        <h2>Why QUARRY?</h2>
+        <p class="fade">🔹 AI-driven security  
+        🔹 Fast & low-cost transactions  
+        🔹 Eco-friendly mining (Proof-of-AI)  
+        🔹 Smart contract automation</p>
+    </div>
+
+    <!-- Sekcja "Join Us" -->
+    <div class="section">
+        <h2>Join the AI Revolution</h2>
+        <p class="fade">Be part of the next generation of blockchain technology. The future is now!</p>
+        <a href="#" class="button">Get Started</a>
+    </div>
+
+    <script>
+        // Efekt przewijania - dodawanie klasy "visible" do sekcji
+        const sections = document.querySelectorAll('.fade');
+
+        function revealSections() {
+            sections.forEach(section => {
+                const sectionPos = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (sectionPos < windowHeight - 100) {
+                    section.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealSections);
+        revealSections();
+    </script>
+
+</body>
+</html>
